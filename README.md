@@ -1,0 +1,7 @@
+# rti_application_record_keeping_system_server
+
+Nodejs
+Typescript
+Express
+Mongodb
+Graphql
