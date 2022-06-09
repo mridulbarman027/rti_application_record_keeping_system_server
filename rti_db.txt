@@ -1,0 +1,38 @@
+1. Users
+		|--UserId
+		|--UserPhone
+		|--UserPassword
+		|--UserEmail
+		|--UserName
+		|--UserAddress
+		|--UserTime
+		
+2. Admin
+		|--AdminId
+		|--AdminUsername
+		|--AdminPassword
+		|--AdminName
+		|--AdminType
+		
+3. Applications
+		|--Id
+		|--UserId
+		|--ApplicantName
+		|--ApplicationDate
+		|--ModeOfPayment 	[Cash, Bank Transfer, Cheque, Online Payment, Tresary Challans]
+		|--PaymentRefNo
+		|--ApplicationTopic
+		|--ApplicationTime
+		|--Replies
+			|--ReplyId
+			|--ReplyTime
+			|--ReplyMode	[email, sms, fax]
+			|--ReplyFrom	[admin1, admin2]
+			|--ReplyType	[first, second]
+			|--ReplyDocFeesDetails	(details that will be send in first reply only)
+			|--Reply3PartyDetials
+				|--Date
+				|--Name
+				|--Organization
+				|--MatterDetail	[description]
+				
