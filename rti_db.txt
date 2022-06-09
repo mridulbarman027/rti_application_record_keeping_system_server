@@ -12,22 +12,23 @@
 		|--AdminUsername
 		|--AdminPassword
 		|--AdminName
-		|--AdminType
+		|--AdminType	[1, 2, 1 -> appellate_authority, 2 -> state_public_infromation_officier]
 		
 3. Applications
 		|--Id
 		|--UserId
 		|--ApplicantName
 		|--ApplicationDate
-		|--ModeOfPayment 	[Cash, Bank Transfer, Cheque, Online Payment, Tresary Challans]
+		|--ModeOfPayment 	[Cash, Bank Transfer, Cheque, Online Payment, Tresary Challan]
 		|--PaymentRefNo
 		|--ApplicationTopic
 		|--ApplicationTime
+		|--ApplicationAdmin		[1, 2, default: 1]
 		|--Replies
 			|--ReplyId
 			|--ReplyTime
 			|--ReplyMode	[email, sms, fax]
-			|--ReplyFrom	[admin1, admin2]
+			|--ReplyFrom	[1, 2, default: 1, when user is not satisfied and application is transferred to admin 2 then this value will be 2]
 			|--ReplyType	[first, second]
 			|--ReplyDocFeesDetails	(details that will be send in first reply only)
 			|--Reply3PartyDetials
