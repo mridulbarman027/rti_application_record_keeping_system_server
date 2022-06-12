@@ -11,11 +11,10 @@ app.get('/', (req: Request, res: Response) => {
   res.send('heloo');
 });
 
-app.listen(PORT, async () => {
-  try {
-    await connectMongo();
-    console.log(`Server is running on port ${PORT}`);
-  } catch (error) {
-    console.log(error);
-  }
+connectMongo().then(() => {
+  app.listen(PORT);
+}).catch(error => {
+  console.log(error);
 });
+
+
