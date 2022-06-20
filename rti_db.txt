@@ -18,12 +18,13 @@
 		|--Id
 		|--UserId
 		|--ApplicantName
-		|--ApplicationDate
+		|--ApplicationDate		//date will be filled by user
 		|--ModeOfPayment 	[Cash, Bank Transfer, Cheque, Online Payment, Tresary Challan]
 		|--PaymentRefNo
 		|--ApplicationTopic
 		|--ApplicationTime
 		|--ApplicationAdmin		[1, 2, default: 1]
+		|--ApplicationClosed	[true, false, default: false]
 		|--Replies
 			|--ReplyId
 			|--ReplyTime
@@ -31,7 +32,8 @@
 			|--ReplyFrom	[1, 2, default: 1, when user is not satisfied and application is transferred to admin 2 then this value will be 2]
 			|--ReplyType	[first, second]
 			|--ReplyDocFeesDetails	(details that will be send in first reply only)
-			|--Reply3PartyDetials
+			|--ReplyTransfer	[true, false]
+			|--Reply3PartyDetails
 				|--Date
 				|--Name
 				|--Organization
