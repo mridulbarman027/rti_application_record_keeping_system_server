@@ -1,41 +1,41 @@
-1. Users
-		|--UserId
-		|--UserPhone
-		|--UserPassword
-		|--UserEmail
-		|--UserName
-		|--UserAddress
-		|--UserTime
+1. users
+		|--user_id
+		|--user_phone
+		|--user_password
+		|--user_email
+		|--user_name
+		|--user_address
+		|--user_time
 		
-2. Admin
-		|--AdminId
-		|--AdminUsername
-		|--AdminPassword
-		|--AdminName
-		|--AdminType	[1, 2, 1 -> appellate_authority, 2 -> state_public_infromation_officier]
+2. admins
+		|--_id
+		|--admin_username
+		|--admin_password
+		|--admin_name
+		|--admin_type	[1, 2, 1 -> appellate_authority, 2 -> state_public_infromation_officier]
 		
-3. Applications
-		|--Id
-		|--UserId
-		|--ApplicantName
-		|--ApplicationDate		//date will be filled by user
-		|--ModeOfPayment 	[Cash, Bank Transfer, Cheque, Online Payment, Tresary Challan]
-		|--PaymentRefNo
-		|--ApplicationTopic
-		|--ApplicationTime
-		|--ApplicationAdmin		[1, 2, default: 1]
-		|--ApplicationClosed	[true, false, default: false]
-		|--Replies
-			|--ReplyId
-			|--ReplyTime
-			|--ReplyMode	[email, sms, fax]
-			|--ReplyFrom	[1, 2, default: 1, when user is not satisfied and application is transferred to admin 2 then this value will be 2]
-			|--ReplyType	[first, second]
-			|--ReplyDocFeesDetails	(details that will be send in first reply only)
-			|--ReplyTransfer	[true, false]
-			|--Reply3PartyDetails
-				|--Date
-				|--Name
-				|--Organization
-				|--MatterDetail	[description]
+3. applications
+		|--id
+		|--userid
+		|--applicant_name
+		|--application_date		//date will be filled by user
+		|--mode_of_payment 	[cash, bank transfer, cheque, online payment, tresary challan]
+		|--payment_ref_no
+		|--application_topic
+		|--application_time
+		|--application_admin		[1, 2, default: 1]
+		|--application_closed	[true, false, default: false]
+		|--replies
+			|--replyid
+			|--reply_time
+			|--reply_mode	[email, sms, fax]
+			|--reply_from	[1, 2, default: 1, when user is not satisfied and application is transferred to admin 2 then this value will be 2]
+			|--reply_type	[first, second]
+			|--reply_doc_fees_details	(details that will be send in first reply only)
+			|--reply_transfer	[true, false]
+			|--reply_3party_details
+				|--date
+				|--name
+				|--organization
+				|--matter_detail	[description]
 				

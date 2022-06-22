@@ -1,3 +1,4 @@
+import { Admin } from './models/admin.schema';
 import bodyParser from 'body-parser';
 import express, {
   Request, Response, Application,
@@ -12,7 +13,15 @@ const PORT = 3000;
 
 app.use(bodyParser.json());
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', async (req: Request, res: Response) => {
+  const saveAdmin = new Admin({
+    admin_username: "state_public_infromation_officier",
+    admin_password: "122343",
+    admin_name: "Demo Name",
+    admin_type: 2
+  });
+
+  await saveAdmin.save();
   res.send('heloo');
 });
 
