@@ -12,7 +12,7 @@
 		|--admin_username
 		|--admin_password
 		|--admin_name
-		|--admin_type	[1, 2, 1 -> appellate_authority, 2 -> state_public_infromation_officier]
+		|--admin_type	[1, 2, 1 -> state_public_infromation_officier, 2 -> appellate_authority]
 		
 3. applications
 		|--id
