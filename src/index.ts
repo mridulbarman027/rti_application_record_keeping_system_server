@@ -1,3 +1,4 @@
+import { isAuth } from './middlewares/is_auth';
 import bodyParser from 'body-parser';
 import express, {
   Request, Response, Application,
@@ -12,6 +13,8 @@ const app: Application = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
+
+app.use(isAuth);
 
 app.get('/', (req: Request, res: Response) => {
   /* const hashedPassword = await bcrypt.hash('12345', 12);
