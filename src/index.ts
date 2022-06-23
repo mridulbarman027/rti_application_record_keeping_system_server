@@ -1,8 +1,6 @@
 import { isAuth } from './middlewares/is_auth';
 import bodyParser from 'body-parser';
-import express, {
-  Request, Response, Application,
-} from 'express';
+import express, { Application } from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import connectMongo from './config/mongo';
 import { schema } from './graphql/schemas';
