@@ -1,9 +1,8 @@
-import { IAdminLogin } from './../../@types/index';
 import { AdminModel } from './../../models/admin.schema';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-export const adminLogin = async (args: { username: string, password: string }) => {
+const adminLogin = async (args: { username: string, password: string }) => {
     const user = await AdminModel.findOne({ admin_username: args.username });
 
     if (!user) {
@@ -23,4 +22,6 @@ export const adminLogin = async (args: { username: string, password: string }) =
         }
     );
     return { userId: user.id, token: token, tokenExpiration: 1 };
-} 
+}
+
+export default adminLogin

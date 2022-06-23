@@ -1,8 +1,7 @@
-import { RequestAdmin } from './../global/index';
 import jwt from 'jsonwebtoken';
-import { NextFunction, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 
-export const isAuth = (req: RequestAdmin, res: Response, next: NextFunction) => {
+export const isAuth = (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.get('Authorization');
     if (!authHeader) {
         req.isAuth = false;
