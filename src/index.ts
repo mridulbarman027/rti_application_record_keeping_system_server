@@ -1,3 +1,4 @@
+import { NextFunction, Request, Response } from 'express';
 import { isAuth } from './middlewares/is_auth';
 import bodyParser from 'body-parser';
 import express, { Application } from 'express';
@@ -11,6 +12,16 @@ const app: Application = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST,GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  } 
+  return next();
+});
 
 app.use(isAuth);
 
