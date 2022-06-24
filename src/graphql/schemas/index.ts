@@ -2,7 +2,7 @@ import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
   type Admin {
-    _id: ID!
+    adminId: ID!
     username: String!
     password: String
   }

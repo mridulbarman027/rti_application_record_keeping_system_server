@@ -21,5 +21,6 @@ export const adminLogin = async (args: { username: string, password: string }) =
             expiresIn: '1h'
         }
     );
-    return { userId: user.id, token: token, tokenExpiration: 1 };
+
+    return { adminId: user.id, token: token, tokenExpiration: 1 };
 }
