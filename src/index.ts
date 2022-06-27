@@ -7,6 +7,15 @@ import connectMongo from './config/mongo';
 import { schema } from './graphql/schemas';
 import { root } from './graphql/resolvers';
 
+declare global {
+  namespace Express {
+      interface Request {
+          isAuth: boolean,
+          userId: string
+      }
+  }
+}
+
 const app: Application = express();
 
 const PORT = 3000;

@@ -1,6 +1,7 @@
-import { AdminModel } from './../../models/admin.schema';
+import { AdminModel } from '../../models/admin.schema';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { devJwtSecret } from '../../utils';
 
 export const adminLogin = async (args: { username: string, password: string }) => {
     const user = await AdminModel.findOne({ admin_username: args.username });
@@ -16,11 +17,11 @@ export const adminLogin = async (args: { username: string, password: string }) =
 
     const token = jwt.sign(
         { id: user.id, admin_username: user.admin_username },
-        'somesupersecretkey',
+        devJwtSecret,
         {
-            expiresIn: '1h'
+            expiresIn: '100h'
         }
     );
 
-    return { adminId: user.id, token: token, tokenExpiration: 1 };
+    return { adminId: user.id, token: token, tokenExpiration: 100 };
 }
