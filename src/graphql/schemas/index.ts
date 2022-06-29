@@ -37,7 +37,7 @@ export const schema = buildSchema(`
     adminLogin(username: String!, password: String!): AdminAuthData!
     adminVerifyToken(adminId: String): AdminVerify!
     userLogin(user_email: String!, user_password: String!): UserAuthData
-    userVerifyToken(userId: String): UserVerify!
+    userVerifyToken(token: String!): UserVerify!
   }
 
   type RootMutation {
