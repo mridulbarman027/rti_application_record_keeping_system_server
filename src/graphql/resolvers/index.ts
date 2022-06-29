@@ -1,9 +1,12 @@
-import { adminLogin } from "./admin.login.resolvers";
-import { userSignup } from "./user.signup.resolvers";
-import { adminVerifyToken } from "./verify.token.auth.resolvers";
+import { adminLogin } from "./admin.login.resolver";
+import { userLogin } from "./user.login.resolver";
+import { userSignup } from "./user.signup.resolver";
+import { adminVerifyToken, userVerifyToken } from "./verify.token.auth.resolver";
 
 export const root = {
     adminLogin: adminLogin,
     adminVerifyToken: adminVerifyToken,
-    userSignup: userSignup
+    userSignup: userSignup,
+    userLogin: userLogin,
+    userVerifyToken: userVerifyToken
 }

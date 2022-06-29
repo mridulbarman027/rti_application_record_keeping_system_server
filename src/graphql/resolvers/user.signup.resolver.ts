@@ -1,4 +1,4 @@
-import { UserModel } from './../../models/user.schema';
+import { UserModel } from '../../models/user.schema';
 import bcrypt from 'bcryptjs';
 
 export const userSignup = async (args: { userSignupInput : { user_name: string, user_email: string, user_phone: string, user_password: string, user_address: string }}) => {

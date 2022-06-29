@@ -7,3 +7,11 @@ export const adminVerifyToken = async (adminId: String, request: Request) => {
     }
     return { isVerified }
 }
+
+export const userVerifyToken = async (userId: String, request: Request) => {
+    let isVerified = false;
+    if (request.isAuth) {
+        isVerified = true;
+    }
+    return { isVerified }
+}
