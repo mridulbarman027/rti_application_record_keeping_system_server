@@ -1,6 +1,10 @@
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
+  type SignupStatus {
+    status: String!
+  }
+
   type AdminVerify {
     isVerified: Boolean!
   }
@@ -11,13 +15,21 @@ export const schema = buildSchema(`
     tokenExpiration: Int!
   }
 
+  input UserSignupInput {
+    user_name: String!
+    user_email: String!
+    user_phone: String!
+    user_password: String!
+    user_address: String!
+  }
+
   type RootQuery {
     adminLogin(username: String!, password: String!): AdminAuthData!
     adminVerifyToken(adminId: String): AdminVerify!
   }
 
   type RootMutation {
-    createEvent(name: String): String
+    userSignup(userSignupInput: UserSignupInput): SignupStatus
   }
 
   schema {

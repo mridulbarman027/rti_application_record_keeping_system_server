@@ -1,4 +1,5 @@
-export interface IAdminLogin {
-    admin_username: string,
-    admin_password: string,
-}
+export enum DbCollections {
+    admins = 'admins',
+    users = 'users',
+    applications = 'applications'
+  }

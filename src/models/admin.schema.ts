@@ -1,3 +1,4 @@
+import { DbCollections } from './../@types/index';
 import { model, Schema } from "mongoose";
 
 export interface IAdmin extends Document {
@@ -16,4 +17,4 @@ export const adminSchema = new Schema<IAdmin>({
     }
 });
 
-export const AdminModel = model<IAdmin>('Admin', adminSchema);
+export const Admin = model<IAdmin>(DbCollections.admins, adminSchema);
