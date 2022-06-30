@@ -1,6 +1,12 @@
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
+  type UserInfo {
+    user_name: String!
+    user_email: String!
+    user_phone: String!
+    user_address: String!
+  }
   type UserVerify {
     isVerified: Boolean!
   }
@@ -38,6 +44,7 @@ export const schema = buildSchema(`
     adminVerifyToken(adminId: String): AdminVerify!
     userLogin(user_email: String!, user_password: String!): UserAuthData
     userVerifyToken(token: String!): UserVerify!
+    userInfo(user_id: String!): UserInfo
   }
 
   type RootMutation {
