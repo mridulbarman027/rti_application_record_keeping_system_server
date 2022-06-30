@@ -19,7 +19,7 @@
 		|--userid
 		|--applicant_name
 		|--application_date		//date will be filled by user
-		|--mode_of_payment 	[cash, bank transfer, cheque, online payment, tresary challan]
+		|--mode_of_payment 	[cash, bank_transfer, cheque, online_payment, tresary_challan]
 		|--payment_ref_no
 		|--application_topic
 		|--application_time
