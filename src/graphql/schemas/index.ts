@@ -1,6 +1,19 @@
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
+  type ApplicationStatus {
+    submitted: String!
+  }
+
+  input ApplicationData {
+    userid: String!
+    applicant_name: String!
+    application_date: String!
+    mode_of_payment: String!
+    payment_ref_no: String!
+    application_topic: String!
+  }
+  
   type UserInfo {
     user_name: String!
     user_email: String!
@@ -49,6 +62,7 @@ export const schema = buildSchema(`
 
   type RootMutation {
     userSignup(userSignupInput: UserSignupInput): SignupStatus
+    createApplication(applicationData: ApplicationData): ApplicationStatus
   }
 
   schema {

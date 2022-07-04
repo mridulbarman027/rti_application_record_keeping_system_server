@@ -19,9 +19,9 @@ export const userLogin = async (args: { user_email: string, user_password: strin
         { id: user.id, user_email: user.user_email },
         devJwtSecret,
         {
-            expiresIn: '100h'
+            expiresIn: '600h'
         }
     );
 
-    return { userId: user.id, token: token, tokenExpiration: 100 };
+    return { userId: user.id, token: token, tokenExpiration: 600 };
 }

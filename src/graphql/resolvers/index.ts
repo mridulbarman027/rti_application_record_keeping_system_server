@@ -1,3 +1,4 @@
+import { createApplication } from './application.create.resolver';
 import { adminLogin } from "./admin.login.resolver";
 import { userInfo } from "./user.info.resolver";
 import { userLogin } from "./user.login.resolver";
@@ -11,4 +12,5 @@ export const root = {
     userLogin: userLogin,
     userVerifyToken,
     userInfo: userInfo,
+    createApplication
 }
