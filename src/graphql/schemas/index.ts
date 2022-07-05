@@ -40,6 +40,7 @@ export const schema = buildSchema(`
 
   type AdminAuthData {
     adminId: ID!
+    adminType: String!
     token: String!
     tokenExpiration: Int!
   }

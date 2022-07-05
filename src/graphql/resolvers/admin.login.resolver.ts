@@ -23,5 +23,7 @@ export const adminLogin = async (args: { username: string, password: string }) =
         }
     );
 
-    return { adminId: user.id, token: token, tokenExpiration: 100 };
+    console.log(user.admin_type);
+
+    return { adminId: user.id, adminType: user.admin_type, token: token, tokenExpiration: 100 };
 }
