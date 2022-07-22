@@ -1,6 +1,39 @@
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
+  type ReplyTransfer {
+    date: String!
+    name: String!
+    organization: String!
+    matter_details: String!
+  }
+
+  type ReplyList {
+    id: String!
+    application_id: String!
+    reply_time: String!
+    reply_mode: String!
+    reply_from: String!
+    reply_type: String!
+    reply_file: String!
+    reply_transfer: Boolean!
+    reply_3party_details: [ReplyTransfer]
+  }
+
+  type ApplicationList {
+    id: String!
+    userid: String!
+    applicant_name: String!
+    application_date: String!
+    mode_of_payment: String!
+    payment_ref_no: String
+    application_topic: String!
+    application_time: String!
+    application_admin: String
+    application_closed: Boolean
+    replies: [ReplyList]
+  }
+
   type ApplicationStatus {
     submitted: String!
   }
@@ -59,6 +92,7 @@ export const schema = buildSchema(`
     userLogin(user_email: String!, user_password: String!): UserAuthData
     userVerifyToken(token: String!): UserVerify!
     userInfo(user_id: String!): UserInfo
+    viewUserApplications: [ApplicationList!]
   }
 
   type RootMutation {

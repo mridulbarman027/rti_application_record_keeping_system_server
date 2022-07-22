@@ -34,19 +34,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 app.use(isAuth);
 
-/* app.get('/', (req: Request, res: Response) => {
-  const hashedPassword = await bcrypt.hash('12345', 12);
-  const saveAdmin = new Admin({
-    admin_username: "state_public_infromation_officier",
-    admin_password: hashedPassword,
-    admin_name: "Example",
-    admin_type: 2
-  });
-
-  await saveAdmin.save();
-  res.send('heloo');
-}); */
-
 app.use('/graphql', graphqlHTTP({
   schema: schema,
   rootValue: root,

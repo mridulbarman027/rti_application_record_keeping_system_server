@@ -1,7 +1,8 @@
 export enum DbCollections {
   admins = 'admins',
   users = 'users',
-  applications = 'applications'
+  applications = 'applications',
+  replies = 'replies'
 }
 
 export interface IReplyTransfer {

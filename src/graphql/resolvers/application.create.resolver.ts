@@ -1,7 +1,12 @@
+import { Request } from "express";
 import { ApplicationModel } from "../../models/application.schema";
 
-export const createApplication = async (args: { applicationData : { userid: string, applicant_name: string, application_date: string, mode_of_payment: string, payment_ref_no: string, application_topic: string }}) => {
+export const createApplication = async (args: { applicationData : { userid: string, applicant_name: string, application_date: string, mode_of_payment: string, payment_ref_no: string, application_topic: string }}, request: Request) => {
     try {
+        if (!request.isAuth) {
+            throw new Error('unauthenticated');
+        }
+
         const userid = args.applicationData.userid;
         const applicant_name = args.applicationData.applicant_name;
         const application_date = args.applicationData.application_date;
@@ -19,7 +24,7 @@ export const createApplication = async (args: { applicationData : { userid: stri
             application_time: new Date(),
             application_admin: 1,
             application_closed: false,
-            replies: []
+            reply_viewed: false,
         });
 
         await application.save();
