@@ -24,7 +24,7 @@ export const createApplication = async (args: { applicationData : { userid: stri
             application_time: new Date(),
             application_admin: 1,
             application_closed: false,
-            reply_viewed: false,
+            reply_viewed: true,
         });
 
         await application.save();

@@ -31,7 +31,8 @@ export const schema = buildSchema(`
     application_time: String!
     application_admin: String
     application_closed: Boolean
-    replies: [ReplyList]
+    reply_viewed: Boolean
+    replies: [ReplyList!]
   }
 
   type ApplicationStatus {
