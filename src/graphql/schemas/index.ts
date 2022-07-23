@@ -1,6 +1,10 @@
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
+  type ReplyUpdateStatus {
+    submitted: Boolean!
+  }
+
   type ReplyTransfer {
     date: String!
     name: String!
@@ -20,7 +24,7 @@ export const schema = buildSchema(`
     reply_3party_details: [ReplyTransfer]
   }
 
-  type ApplicationList {
+  type Application {
     id: String!
     userid: String!
     applicant_name: String!
@@ -93,12 +97,14 @@ export const schema = buildSchema(`
     userLogin(user_email: String!, user_password: String!): UserAuthData
     userVerifyToken(token: String!): UserVerify!
     userInfo(user_id: String!): UserInfo
-    viewUserApplications: [ApplicationList!]
+    viewUserApplications: [Application!]
+    getApplicationById(applicationId: String!): Application
   }
 
   type RootMutation {
     userSignup(userSignupInput: UserSignupInput): SignupStatus
     createApplication(applicationData: ApplicationData): ApplicationStatus
+    updateReplyView(applicationId: String!): ReplyUpdateStatus
   }
 
   schema {

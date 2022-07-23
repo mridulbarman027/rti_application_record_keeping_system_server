@@ -1,3 +1,5 @@
+import { updateReplyView } from './reply.update.resolver';
+import { getApplicationById } from './application.get.resolver';
 import { viewUserApplications } from './applications.list.get.resolver';
 import { createApplication } from './application.create.resolver';
 import { adminLogin } from "./admin.login.resolver";
@@ -15,4 +17,6 @@ export const root = {
     userInfo: userInfo,
     createApplication,
     viewUserApplications,
+    getApplicationById,
+    updateReplyView
 }

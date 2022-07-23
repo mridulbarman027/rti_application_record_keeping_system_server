@@ -24,14 +24,14 @@ export interface IReplies {
 }
 
 export interface IApplication {
-  userid: string,
-  applicant_name: string,
-  application_date: object,
-  mode_of_payment: string,
-  payment_ref_no: string,
-  application_topic: string,
-  application_time: object,
-  application_admin: number,
-  application_closed: boolean,
-  replies: IReplies[]
+  userid?: string,
+  applicant_name?: string,
+  application_date?: object,
+  mode_of_payment?: string,
+  payment_ref_no?: string,
+  application_topic?: string,
+  application_time?: object,
+  application_admin?: number,
+  application_closed?: boolean,
+  replies?: IReplies[]
 }
