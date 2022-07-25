@@ -28,8 +28,10 @@ export const searchApplicaitonsAdmin = async (args: { searchApplicationAdminData
         let application;
 
         if (dateRange && dateRange.length > 1) {
-            const startDate = new Date(dateRange.split(',')[0].trim()).toUTCString();
-            const endDate = new Date(dateRange.split(',')[1].trim()).toUTCString();
+            const startDateMs = new Date(dateRange.split(',')[0].trim()).getTime();
+            const endDateMs = new Date(dateRange.split(',')[1].trim()).getTime();
+            const startDate = new Date(startDateMs + (19800 * 1000));   //to convert utc into indian standard time
+            const endDate = new Date(endDateMs + (19800 * 1000));
 
             if (searchQuery && searchQuery.length > 0) {
 
