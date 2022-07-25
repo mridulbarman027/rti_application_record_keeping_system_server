@@ -24,7 +24,7 @@ export const applicationSchema = new Schema<IApplication>({
         required: true
     },
     application_date: {
-        type: Object,
+        type: Date,
         required: true
     },
     mode_of_payment: {
@@ -39,7 +39,7 @@ export const applicationSchema = new Schema<IApplication>({
         required: true
     },
     application_time: {
-        type: Object,
+        type: Date,
         required: true
     },
     application_admin: {

@@ -32,7 +32,7 @@ export const userSignupSchema = new Schema<IUserSignup>({
         required: true
     },
     user_time: {
-        type: Object,
+        type: Date,
         required: true
     }
 });

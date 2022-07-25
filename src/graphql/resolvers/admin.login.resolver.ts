@@ -1,10 +1,10 @@
-import { Admin } from '../../models/admin.schema';
+import { AdminModel } from '../../models/admin.schema';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { devJwtSecret } from '../../utils';
 
 export const adminLogin = async (args: { username: string, password: string }) => {
-    const user = await Admin.findOne({ admin_username: args.username });
+    const user = await AdminModel.findOne({ admin_username: args.username });
 
     if (!user) {
         throw new Error('User does not exist!');

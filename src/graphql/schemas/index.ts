@@ -1,6 +1,12 @@
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
+  input SearchApplicationAdminData {
+    adminId: String!
+    dateRange: String
+    searchQuery: String
+  }
+
   type ReplyUpdateStatus {
     submitted: Boolean!
   }
@@ -99,6 +105,7 @@ export const schema = buildSchema(`
     userInfo(user_id: String!): UserInfo
     viewUserApplications: [Application!]
     getApplicationById(applicationId: String!): Application
+    searchApplicaitonsAdmin(searchApplicationAdminData: SearchApplicationAdminData): [Application!]
   }
 
   type RootMutation {

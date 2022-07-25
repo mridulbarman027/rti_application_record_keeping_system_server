@@ -21,4 +21,4 @@ export const adminSchema = new Schema<IAdmin>({
     }
 });
 
-export const Admin = model<IAdmin>(DbCollections.admins, adminSchema);
+export const AdminModel = model<IAdmin>(DbCollections.admins, adminSchema);

@@ -1,3 +1,4 @@
+import { searchApplicaitonsAdmin } from './search.applications.admin';
 import { updateReplyView } from './reply.update.resolver';
 import { getApplicationById } from './application.get.resolver';
 import { viewUserApplications } from './applications.list.get.resolver';
@@ -18,5 +19,6 @@ export const root = {
     createApplication,
     viewUserApplications,
     getApplicationById,
-    updateReplyView
+    updateReplyView,
+    searchApplicaitonsAdmin
 }
