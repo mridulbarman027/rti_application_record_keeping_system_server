@@ -26,6 +26,13 @@
 		|--application_admin		[1, 2, default: 1]
 		|--application_closed	[true, false, default: false]
 		|--reply_viewed		[true, false, default: false]
+		|--reply_3party
+		
+		|--reply_3party_details
+			|--date
+			|--name
+			|--organization
+			|--matter_details	[description]
 		
 		
 		
@@ -48,15 +55,13 @@
 		|--id
 		|--application_id
 		|--reply_time
-		|--reply_mode	[email, sms, fax]
+		|--reply_from_id
+		|--reply_from_name
 		|--reply_from	[1, 2, default: 1, when user is not satisfied and application is transferred to admin 2 then this value will be 2]
-		|--reply_type	[first, second]
+		|--reply_type	[1, 2]	..first, second
 		|--reply_file	//base64 less than 10mb
-		|--reply_doc_fees_details	(details that will be send in first reply only)	// no need for now
-		|--reply_transfer	[true, false]
-		|--reply_3party_details
-			|--date
-			|--name
-			|--organization
-			|--matter_details	[description]
+		
+		
+		
+		
 				

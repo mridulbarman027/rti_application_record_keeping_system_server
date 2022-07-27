@@ -23,6 +23,8 @@ export const viewUserApplications = async (args: {}, request: Request) => {
             application_admin: app.application_admin,
             application_closed: app.application_closed,
             reply_viewed: app.reply_viewed,
+            reply_3party: app.reply_3party,
+            reply_3party_details: app.reply_3party_details,
             replies: replies
         };
     });

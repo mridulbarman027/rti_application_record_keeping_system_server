@@ -37,6 +37,7 @@ export const searchApplicaitonsAdmin = async (args: { searchApplicationAdminData
 
                 application = await ApplicationModel.find({
                     application_admin: adminType,
+                    application_closed: false,
                     '$or': [{
                         applicant_name: { '$regex': `${searchQuery}`, '$options' : 'i' }
                     }, {
@@ -52,6 +53,7 @@ export const searchApplicaitonsAdmin = async (args: { searchApplicationAdminData
 
                 application = await ApplicationModel.find({
                     application_admin: adminType,
+                    application_closed: false,
                     application_date: {
                         '$gte': startDate,
                         '$lte': endDate
@@ -64,6 +66,7 @@ export const searchApplicaitonsAdmin = async (args: { searchApplicationAdminData
 
                 application = await ApplicationModel.find({
                     application_admin: adminType,
+                    application_closed: false,
                     '$or': [{
                         applicant_name: { '$regex': `${searchQuery}`, '$options' : 'i' }
                     }, {
@@ -74,7 +77,8 @@ export const searchApplicaitonsAdmin = async (args: { searchApplicationAdminData
             } else {
 
                 application = await ApplicationModel.find({
-                    application_admin: adminType
+                    application_admin: adminType,
+                    application_closed: false,
                 });
 
             }

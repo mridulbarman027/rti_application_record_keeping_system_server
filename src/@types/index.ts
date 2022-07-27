@@ -17,10 +17,9 @@ export interface IReplies {
   reply_time: object,
   reply_mode: string,
   reply_from: number,
-  reply_type: string,
-  reply_doc_fees_details: string,
-  reply_transfer: boolean,
-  reply_3party_details: IReplyTransfer[]
+  reply_from_name: number,
+  reply_from_id: string,
+  reply_type: number,
 }
 
 export interface IApplication {
@@ -33,5 +32,7 @@ export interface IApplication {
   application_time?: object,
   application_admin?: number,
   application_closed?: boolean,
+  reply_3party?: boolean,
+  reply_3party_details?: IReplyTransfer,
   replies?: IReplies[]
 }

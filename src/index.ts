@@ -20,7 +20,7 @@ const app: Application = express();
 
 const PORT = 3000;
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '6mb'}));
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

@@ -11,6 +11,9 @@ export const getApplicationById = async (args: {applicationId: string}, request:
 
     if (application) {
         const replies = await ReplyModel.find({ application_id: application.id });
+        replies.map(reply => {
+            return { ...reply, id: reply._id }
+        });
         const result = {
             id: application.id,
             userid: application.userid,
@@ -23,6 +26,8 @@ export const getApplicationById = async (args: {applicationId: string}, request:
             application_admin: application.application_admin,
             application_closed: application.application_closed,
             reply_viewed: application.reply_viewed,
+            reply_3party: application.reply_3party,
+            reply_3party_details: application.reply_3party_details,
             replies: replies
         };
     

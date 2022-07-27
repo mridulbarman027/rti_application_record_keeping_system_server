@@ -1,6 +1,13 @@
 import { model, Schema } from "mongoose";
 import { DbCollections } from "../@types";
 
+interface IReplyTransfer {
+    date: object,
+    name: string,
+    organization: string,
+    matter_detail: string
+}
+
 interface IApplication extends Document {
     userid: string,
     applicant_name: string,
@@ -12,6 +19,8 @@ interface IApplication extends Document {
     application_admin: number,
     application_closed: boolean,
     reply_viewed: boolean
+    reply_3party: boolean
+    reply_3party_details: IReplyTransfer,
 }
 
 export const applicationSchema = new Schema<IApplication>({
@@ -53,6 +62,17 @@ export const applicationSchema = new Schema<IApplication>({
     reply_viewed: {
         type: Boolean,
         required: true
+    },
+    reply_3party: {
+        type: Boolean
+    },
+    reply_3party_details: {
+        type: { 
+            date: Object,
+            name: String,
+            organization: String,
+            matter_detail: String
+         }
     }
 });
 

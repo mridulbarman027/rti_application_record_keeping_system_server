@@ -1,6 +1,24 @@
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
+  input ReplyTransferData {
+    date: String!
+    name: String!
+    organization: String!
+    matter_details: String!
+  }
+
+  input ReplyData {
+    application_id: String!
+    reply_from: String!
+    reply_from_name: String
+    reply_from_id: String!
+    reply_type: String!
+    reply_file: String!
+    reply_transfer: Boolean
+    reply_3party_details: ReplyTransferData
+  }
+
   input SearchApplicationAdminData {
     adminId: String!
     dateRange: String
@@ -11,23 +29,22 @@ export const schema = buildSchema(`
     submitted: Boolean!
   }
 
-  type ReplyTransfer {
-    date: String!
-    name: String!
-    organization: String!
-    matter_details: String!
-  }
-
   type ReplyList {
     id: String!
     application_id: String!
     reply_time: String!
-    reply_mode: String!
+    reply_from_id: String!
+    reply_from_name: String!
     reply_from: String!
     reply_type: String!
     reply_file: String!
-    reply_transfer: Boolean!
-    reply_3party_details: [ReplyTransfer]
+  }
+
+  type Reply3Party {
+    date: String!
+    name: String!
+    organization: String!
+    matter_details: String!
   }
 
   type Application {
@@ -42,7 +59,9 @@ export const schema = buildSchema(`
     application_admin: String
     application_closed: Boolean
     reply_viewed: Boolean
-    replies: [ReplyList!]
+    reply_3party: Boolean
+    reply_3party_details: Reply3Party
+    replies: [ReplyList]
   }
 
   type ApplicationStatus {
@@ -112,6 +131,7 @@ export const schema = buildSchema(`
     userSignup(userSignupInput: UserSignupInput): SignupStatus
     createApplication(applicationData: ApplicationData): ApplicationStatus
     updateReplyView(applicationId: String!): ReplyUpdateStatus
+    sendReply(replyData: ReplyData): [ReplyList!]
   }
 
   schema {

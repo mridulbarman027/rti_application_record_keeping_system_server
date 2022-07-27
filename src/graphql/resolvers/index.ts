@@ -8,6 +8,7 @@ import { userInfo } from "./user.info.resolver";
 import { userLogin } from "./user.login.resolver";
 import { userSignup } from "./user.signup.resolver";
 import { adminVerifyToken, userVerifyToken } from "./verify.token.auth.resolver";
+import { sendReply } from './reply.send.resolver';
 
 export const root = {
     adminLogin: adminLogin,
@@ -20,5 +21,6 @@ export const root = {
     viewUserApplications,
     getApplicationById,
     updateReplyView,
-    searchApplicaitonsAdmin
+    searchApplicaitonsAdmin,
+    sendReply
 }

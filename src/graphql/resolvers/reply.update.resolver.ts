@@ -13,11 +13,12 @@ export const updateReplyView = async (args: { applicationId: string }, request: 
             
             await application.updateOne({ reply_viewed: true });
 
+            return { submitted: true };
+
         } else {
-            return { status: false };
+            return { submitted: false };
         }
 
-        return { status: true };
     } catch (e) {
         throw e;
     }
