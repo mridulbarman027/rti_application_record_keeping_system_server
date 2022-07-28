@@ -1,3 +1,5 @@
+import { transfer3Party } from './transfer.3party.resolver';
+import { transferAuthority } from './transfer.authority.resolver';
 import { searchApplicaitonsAdmin } from './search.applications.admin';
 import { updateReplyView } from './reply.update.resolver';
 import { getApplicationById } from './application.get.resolver';
@@ -22,5 +24,7 @@ export const root = {
     getApplicationById,
     updateReplyView,
     searchApplicaitonsAdmin,
-    sendReply
+    sendReply,
+    transferAuthority,
+    transfer3Party
 }

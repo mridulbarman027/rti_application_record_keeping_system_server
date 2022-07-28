@@ -1,6 +1,17 @@
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
+  input PartyData {
+    date: String!
+    name: String!
+    organization: String!
+    matter_details: String!
+  }
+
+  type TransferStatus {
+    submitted: Boolean!
+  }
+
   input ReplyTransferData {
     date: String!
     name: String!
@@ -132,6 +143,8 @@ export const schema = buildSchema(`
     createApplication(applicationData: ApplicationData): ApplicationStatus
     updateReplyView(applicationId: String!): ReplyUpdateStatus
     sendReply(replyData: ReplyData): [ReplyList!]
+    transferAuthority(applicationId: String, fromId: String): TransferStatus
+    transfer3Party(partyData: PartyData): Application
   }
 
   schema {

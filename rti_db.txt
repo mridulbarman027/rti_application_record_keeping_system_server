@@ -33,23 +33,6 @@
 			|--name
 			|--organization
 			|--matter_details	[description]
-		
-		
-		
-		
-		|--replies
-			|--replyid
-			|--reply_time
-			|--reply_mode	[email, sms, fax]
-			|--reply_from	[1, 2, default: 1, when user is not satisfied and application is transferred to admin 2 then this value will be 2]
-			|--reply_type	[first, second]
-			|--reply_doc_fees_details	(details that will be send in first reply only)
-			|--reply_transfer	[true, false]
-			|--reply_3party_details
-				|--date
-				|--name
-				|--organization
-				|--matter_details	[description]
 				
 4. replies
 		|--id
@@ -57,8 +40,6 @@
 		|--reply_time
 		|--reply_from_id
 		|--reply_from_name
-		|--reply_from	[1, 2, default: 1, when user is not satisfied and application is transferred to admin 2 then this value will be 2]
-		|--reply_type	[1, 2]	..first, second
 		|--reply_file	//base64 less than 10mb
 		
 		
