@@ -26,7 +26,7 @@
 		|--application_admin		[1, 2, default: 1]
 		|--application_closed	[true, false, default: false]
 		|--reply_viewed		[true, false, default: false]
-		|--reply_3party
+		|--reply_3party		[true, false, default: false]
 		
 		|--reply_3party_details
 			|--date

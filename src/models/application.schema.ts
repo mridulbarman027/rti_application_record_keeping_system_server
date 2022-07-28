@@ -5,7 +5,7 @@ interface IReplyTransfer {
     date: object,
     name: string,
     organization: string,
-    matter_detail: string
+    matter_details: string
 }
 
 interface IApplication extends Document {
@@ -71,7 +71,7 @@ export const applicationSchema = new Schema<IApplication>({
             date: Object,
             name: String,
             organization: String,
-            matter_detail: String
+            matter_details: String
          }
     }
 });

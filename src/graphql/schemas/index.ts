@@ -2,6 +2,7 @@ import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
   input PartyData {
+    applicationId: String!
     date: String!
     name: String!
     organization: String!
@@ -52,10 +53,10 @@ export const schema = buildSchema(`
   }
 
   type Reply3Party {
-    date: String!
-    name: String!
-    organization: String!
-    matter_details: String!
+    date: String
+    name: String
+    organization: String
+    matter_details: String
   }
 
   type Application {

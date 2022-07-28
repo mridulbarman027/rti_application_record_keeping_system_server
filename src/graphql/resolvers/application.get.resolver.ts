@@ -3,9 +3,9 @@ import { Request } from "express";
 import { ReplyModel } from '../../models/reply.schema';
 
 export const getApplicationById = async (args: {applicationId: string}, request: Request) => {
-    if (!request.isAuth) {
+    /* if (!request.isAuth) {
         throw new Error('unauthenticated');
-    }
+    } */
 
     const application = await ApplicationModel.findById(args.applicationId);
 
