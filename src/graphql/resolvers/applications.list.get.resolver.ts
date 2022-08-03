@@ -19,6 +19,7 @@ export const viewUserApplications = async (args: {}, request: Request) => {
             mode_of_payment: app.mode_of_payment,
             payment_ref_no: app.payment_ref_no,
             application_topic: app.application_topic,
+            application_desc: app.application_desc,
             application_time: app.application_time,
             application_admin: app.application_admin,
             application_closed: app.application_closed,

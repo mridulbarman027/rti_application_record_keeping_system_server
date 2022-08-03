@@ -2,7 +2,7 @@ import { ApplicationModel } from './../../models/application.schema';
 import { Request } from "express";
 import { ReplyModel } from '../../models/reply.schema';
 
-export const getApplicationById = async (args: {applicationId: string}, request: Request) => {
+export const getApplicationById = async (args: { applicationId: string }, request: Request) => {
     /* if (!request.isAuth) {
         throw new Error('unauthenticated');
     } */
@@ -22,6 +22,7 @@ export const getApplicationById = async (args: {applicationId: string}, request:
             mode_of_payment: application.mode_of_payment,
             payment_ref_no: application.payment_ref_no,
             application_topic: application.application_topic,
+            application_desc: application.application_desc,
             application_time: application.application_time,
             application_admin: application.application_admin,
             application_closed: application.application_closed,
@@ -30,7 +31,7 @@ export const getApplicationById = async (args: {applicationId: string}, request:
             reply_3party_details: application.reply_3party_details,
             replies: replies
         };
-    
+
         return result;
     }
 

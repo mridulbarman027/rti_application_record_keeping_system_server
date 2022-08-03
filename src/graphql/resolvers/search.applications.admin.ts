@@ -39,9 +39,9 @@ export const searchApplicaitonsAdmin = async (args: { searchApplicationAdminData
                     application_admin: adminType,
                     application_closed: false,
                     '$or': [{
-                        applicant_name: { '$regex': `${searchQuery}`, '$options' : 'i' }
+                        applicant_name: { '$regex': `${searchQuery}`, '$options': 'i' }
                     }, {
-                        application_topic: { '$regex': `${searchQuery}`, '$options' : 'i' }
+                        application_topic: { '$regex': `${searchQuery}`, '$options': 'i' }
                     }],
                     application_date: {
                         '$gte': startDate,
@@ -68,9 +68,9 @@ export const searchApplicaitonsAdmin = async (args: { searchApplicationAdminData
                     application_admin: adminType,
                     application_closed: false,
                     '$or': [{
-                        applicant_name: { '$regex': `${searchQuery}`, '$options' : 'i' }
+                        applicant_name: { '$regex': `${searchQuery}`, '$options': 'i' }
                     }, {
-                        application_topic: { '$regex': `${searchQuery}`, '$options' : 'i' }
+                        application_topic: { '$regex': `${searchQuery}`, '$options': 'i' }
                     }]
                 });
 
@@ -94,6 +94,7 @@ export const searchApplicaitonsAdmin = async (args: { searchApplicationAdminData
                 mode_of_payment: app.mode_of_payment,
                 payment_ref_no: app.payment_ref_no,
                 application_topic: app.application_topic,
+                application_desc: app.application_desc,
                 application_time: app.application_time,
                 application_admin: app.application_admin,
                 application_closed: app.application_closed,
