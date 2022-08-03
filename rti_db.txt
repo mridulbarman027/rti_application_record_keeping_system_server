@@ -12,7 +12,7 @@
 		|--admin_username
 		|--admin_password
 		|--admin_name
-		|--admin_type	[1, 2, 1 -> state_public_infromation_officier, 2 -> appellate_authority]
+		|--admin_type	[1, 2, 3, 1 -> state_public_infromation_officier, 2 -> appellate_authority, 3 -> third_party]
 		
 3. applications
 		|--id
@@ -22,6 +22,7 @@
 		|--mode_of_payment 	[cash, bank_transfer, cheque, online_payment, tresary_challan]
 		|--payment_ref_no
 		|--application_topic
+		|--application_desc
 		|--application_time
 		|--application_admin		[1, 2, default: 1]
 		|--application_closed	[true, false, default: false]

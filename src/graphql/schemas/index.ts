@@ -67,6 +67,7 @@ export const schema = buildSchema(`
     mode_of_payment: String!
     payment_ref_no: String
     application_topic: String!
+    application_desc: String
     application_time: String!
     application_admin: String
     application_closed: Boolean
@@ -87,6 +88,7 @@ export const schema = buildSchema(`
     mode_of_payment: String!
     payment_ref_no: String!
     application_topic: String!
+    application_desc: String
   }
   
   type UserInfo {

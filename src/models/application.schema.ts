@@ -15,6 +15,7 @@ interface IApplication extends Document {
     mode_of_payment: string,
     payment_ref_no: string,
     application_topic: string,
+    application_desc: string,
     application_time: object,
     application_admin: number,
     application_closed: boolean,
@@ -47,6 +48,9 @@ export const applicationSchema = new Schema<IApplication>({
         type: String,
         required: true
     },
+    application_desc: {
+        type: String
+    },
     application_time: {
         type: Date,
         required: true
@@ -67,12 +71,12 @@ export const applicationSchema = new Schema<IApplication>({
         type: Boolean
     },
     reply_3party_details: {
-        type: { 
+        type: {
             date: Object,
             name: String,
             organization: String,
             matter_details: String
-         }
+        }
     }
 });
 
